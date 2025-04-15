@@ -1,3 +1,14 @@
-class TuyauView(object):
+class TuyauView():
     def __init__(self):
-        self.x
+        pass
+
+# Affichage de la grille
+    def print_board(self):
+        pass
+
+# Envoie des messages à l'utilisateur
+    def message(self):
+        pass
+# Affiche les tuyau dans la grille
+    def print_tuyau(self):
+        pass
