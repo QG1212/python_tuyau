@@ -22,6 +22,8 @@ class Key(QPushButton):
         self.angle = (self.angle + 90) % 360
         self.update_icon()# Mettre à jour l'icône après rotation
 
+# a comprendre !!!!!!!!!!!!!!!!!!!!!!
+
     def update_icon(self):
         # Appliquer la rotation en fonction de l'angle
         transform = QTransform()

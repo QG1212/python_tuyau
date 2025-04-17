@@ -14,6 +14,7 @@ class Grille(QWidget):
         self.setWindowTitle("Jeu du tuyau")
         self.setMinimumSize(600, 600)
 
+# a comprendre !!!!!!!!!!!!!!!!!!!
 
         image_folder = "images"
         images = [
