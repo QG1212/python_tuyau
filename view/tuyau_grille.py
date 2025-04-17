@@ -1,5 +1,8 @@
 from PySide6.QtWidgets import QWidget, QGridLayout, QHBoxLayout, QVBoxLayout
-from tuyau_key import Key
+from view.tuyau_key import Key
+import os
+import random
+
 
 class Grille(QWidget):
     def __init__(self):
@@ -11,67 +14,38 @@ class Grille(QWidget):
         self.setWindowTitle("Jeu du tuyau")
         self.setMinimumSize(600, 600)
 
+
+        image_folder = "images"
+        images = [
+            os.path.join(image_folder, "tuyau_90.png"),
+            os.path.join(image_folder, "tuyau_droite.png")
+        ]
+
+
         lh1 = QHBoxLayout()
         lh2 = QHBoxLayout()
         lh3 = QHBoxLayout()
         lh4 = QHBoxLayout()
 
-#Ligne 1
-        case1 = Key(" ")
-        lh1.addWidget(case1)
+        # Créer la grille avec des images aléatoires
+        for i in range(16):  # 4 cases par ligne
+            # Choisir une image aléatoire parmi celles définies dans images
+            image_path = random.choice(images)
 
-        case2 = Key(" ")
-        lh1.addWidget(case2)
-
-        case3 = Key(" ")
-        lh1.addWidget(case3)
-
-        case4 = Key(" ")
-        lh1.addWidget(case4)
-
-# Ligne 2
-        case5 = Key(" ")
-        lh2.addWidget(case5)
-
-        case6 = Key(" ")
-        lh2.addWidget(case6)
-
-        case7 = Key(" ")
-        lh2.addWidget(case7)
-
-        case8 = Key(" ")
-        lh2.addWidget(case8)
-
-#Ligne 3
-        case9 = Key(" ")
-        lh3.addWidget(case9)
-
-        case10 = Key(" ")
-        lh3.addWidget(case10)
-
-        case11 = Key(" ")
-        lh3.addWidget(case11)
-
-        case12 = Key(" ")
-        lh3.addWidget(case12)
-
-#Ligne 4
-        case13 = Key(" ")
-        lh4.addWidget(case13)
-
-        case14 = Key(" ")
-        lh4.addWidget(case14)
-
-        case15 = Key(" ")
-        lh4.addWidget(case15)
-
-        case16 = Key(" ")
-        lh4.addWidget(case16)
+            case = Key(image_path)
+            if i < 4:
+                lh1.addWidget(case)
+            elif i < 8:
+                lh2.addWidget(case)
+            elif i < 12:
+                lh3.addWidget(case)
+            else:
+                lh4.addWidget(case)
 
 # Grille
-        lg.addLayout(lh1)
-        lg.addLayout(lh2)
-        lg.addLayout(lh3)
-        lg.addLayout(lh4)
+        lg.addLayout(lh1, 0, 0)
+        lg.addLayout(lh2, 1, 0)
+        lg.addLayout(lh3, 2, 0)
+        lg.addLayout(lh4, 3, 0)
 
         self.setLayout(lg)

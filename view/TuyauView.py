@@ -12,6 +12,6 @@ class TuyauView(QWidget):
 # Envoie des messages à l'utilisateur
     def message(self):
         pass
-# Affiche les tuyau dans la grille
+# Affiche les tuyaux dans la grille
     def print_tuyau(self):
         pass
