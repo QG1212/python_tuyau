@@ -18,7 +18,7 @@ class Grille(QWidget):
         image_folder = "images"
         images = [
             os.path.join(image_folder, "tuyau_90.png"),
-            os.path.join(image_folder, "tuyau_droite.png")
+            os.path.join(image_folder, "tuyau_droit.png")
         ]
 
 
