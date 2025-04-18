@@ -17,6 +17,8 @@ class Key(QPushButton):
 
         self.clicked.connect(self.buttonClicked)
 
+# model
+
     def buttonClicked(self):
         # Incrémenter l'angle de 90° à chaque clic
         self.angle = (self.angle + 90) % 360

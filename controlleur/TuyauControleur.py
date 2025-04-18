@@ -1,18 +1,19 @@
 from PySide6.QtWidgets import QWidget, QVBoxLayout, QPushButton
-from view.tuyau_grille import Grille
 
+from model.TuyauModel import TuyauModel
+from view.TuyauView import TuyauView
+
+#appel la vue/model avevc une instance
+# constructeur
+# demarrer l'appli qui est appeler dans  le main
+# verifier si le programme est lancer avec un bool
 
 class TuyauControleur():
+
     def __init__(self):
-        self.gridV = Grille()
-        self.gridV.show()
-
-    def show(self):
-        self.gridV.show()
-
-# Lance la partie
-    def start(self):
+        # constructeur/bool
         pass
-# récupère l'action d'un joueur
-    def getAction(self):
+
+    def start(self):
+        # Lance la partie
         pass
