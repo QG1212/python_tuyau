@@ -11,7 +11,8 @@ from view.TuyauView import TuyauView
 class TuyauControleur():
 
     def __init__(self):
-        # constructeur/bool
+        self.model = TuyauModel()
+        self.vue = TuyauView()
         pass
 
     def start(self):

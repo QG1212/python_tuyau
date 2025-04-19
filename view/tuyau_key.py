@@ -15,6 +15,7 @@ class Key(QPushButton):
         self.image_path = image_path
         self.update_icon()
 
+        # prevenir le controlleur de l'action + coor
         self.clicked.connect(self.buttonClicked)
 
 # model

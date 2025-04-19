@@ -16,6 +16,12 @@ class Grille(QWidget):
 
 # a comprendre !!!!!!!!!!!!!!!!!!!
 
+        # Layouts horizontaux pour chaque ligne
+        lh1 = QHBoxLayout()
+        lh2 = QHBoxLayout()
+        lh3 = QHBoxLayout()
+        lh4 = QHBoxLayout()
+
         image_folder = "images"
         images = [
             "tuyau_coude.png", "tuyau_droit.png", "tuyau_droit.png", "tuyau_coude.png",
@@ -23,12 +29,6 @@ class Grille(QWidget):
             "tuyau_droit.png", "tuyau_droit.png", "tuyau_droit.png", "tuyau_droit.png",
             "tuyau_coude.png", "tuyau_coude.png", "tuyau_coude.png", "tuyau_coude.png"
         ]
-
-        # Layouts horizontaux pour chaque ligne
-        lh1 = QHBoxLayout()
-        lh2 = QHBoxLayout()
-        lh3 = QHBoxLayout()
-        lh4 = QHBoxLayout()
 
         # Créer la grille avec des images aléatoires
         for i in range(16):  # 4 cases par ligne
