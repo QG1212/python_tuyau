@@ -10,11 +10,12 @@ from view.TuyauView import TuyauView
 
 class TuyauControleur():
 
-    def __init__(self):
-        self.model = TuyauModel()
-        self.vue = TuyauView()
+    def __init__(self, model, view):
+        self._model = model
+        self.vue = view
         pass
 
     def start(self):
         # Lance la partie
         pass
+

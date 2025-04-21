@@ -1,11 +1,16 @@
 from controlleur.TuyauControleur import TuyauControleur
+from view.TuyauView import TuyauView
 from PySide6.QtWidgets import QApplication
 
 
 
 if __name__ == "__main__":
-    app = QApplication([])
+    vue = TuyauView()
+    vue.print_board()
+
     game = TuyauControleur()
-    #view.show
-    game.show()
+    game.start()
+
+    app = QApplication([])
     app.exec_()
+

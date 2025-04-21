@@ -21,35 +21,22 @@ class TuyauModel:
         #clear a la fin
         pass
 
-# Permet au jouer de tourner une tuile
-    def play(self):
-        Key.buttonClicked()
-        Key.update_icon()
+    def level1(self):
+        image_folder = "images"
+        images = [
+            "tuyau_coude.png", "tuyau_droit.png", "tuyau_droit.png", "tuyau_coude.png",
+            "tuyau_droit.png", "tuyau_coude.png", "tuyau_coude.png", "tuyau_droit.png",
+            "tuyau_droit.png", "tuyau_droit.png", "tuyau_droit.png", "tuyau_droit.png",
+            "tuyau_coude.png", "tuyau_coude.png", "tuyau_coude.png", "tuyau_coude.png"
+        ]
         pass
 
-    # def niveau(self):
-    #     image_folder = "images"
-    #     images = [
-    #         "tuyau_coude.png", "tuyau_droit.png", "tuyau_droit.png", "tuyau_coude.png",
-    #         "tuyau_droit.png", "tuyau_coude.png", "tuyau_coude.png", "tuyau_droit.png",
-    #         "tuyau_droit.png", "tuyau_droit.png", "tuyau_droit.png", "tuyau_droit.png",
-    #         "tuyau_coude.png", "tuyau_coude.png", "tuyau_coude.png", "tuyau_coude.png"
-    #     ]
-    #     # Créer la grille avec des images aléatoires
-    #     for i in range(16):  # 4 cases par ligne
-    #         # Choisir une image aléatoire parmi celles définies dans images
-    #         image_path = os.path.join(image_folder, images[i])
-    #
-    #         case = Key(image_path)
-    #         if i < 4:
-    #             lh1.addWidget(case)
-    #         elif i < 8:
-    #             lh2.addWidget(case)
-    #         elif i < 12:
-    #             lh3.addWidget(case)
-    #         else:
-    #             lh4.addWidget(case)
-    #     pass
+# Permet au jouer de tourner une tuile
+    def play(self):
+        keys = Key(self.level1())
+        keys.buttonClicked()
+        keys.update_icon()
+        pass
 
 # Mélanger
     def shuffleBoard(self):
