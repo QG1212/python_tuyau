@@ -30,11 +30,22 @@ class Grille(QWidget):
             "tuyau_coude.png", "tuyau_coude.png", "tuyau_coude.png", "tuyau_coude.png"
         ]
 
+<<<<<<< HEAD
         # Créer la grille avec des images aléatoires
         for i in range(16):  # 4 cases par ligne
             # Choisir une image aléatoire parmi celles définies dans images
             image_path = os.path.join(image_folder, images[i])
+=======
+        # Layouts horizontaux pour chaque ligne
+        lh1 = QHBoxLayout()
+        lh2 = QHBoxLayout()
+        lh3 = QHBoxLayout()
+        lh4 = QHBoxLayout()
 
+>>>>>>> b30c24cfbe46291d39e09ee761570cac8f654227
+
+        for i in range(16):
+            image_path = os.path.join(image_folder, images[i])
             case = Key(image_path)
             if i < 4:
                 lh1.addWidget(case)
