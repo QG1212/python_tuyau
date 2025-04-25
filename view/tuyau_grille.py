@@ -2,7 +2,7 @@ from PySide6.QtWidgets import QWidget, QGridLayout
 from PySide6.QtCore import Signal
 from view.tuyau_key import Key
 
-#lagepgs
+
 
 class Grille(QWidget):
     signal = Signal(int, int)
