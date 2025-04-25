@@ -13,9 +13,15 @@ class TuyauControleur():
     def __init__(self, model, view):
         self._model = model
         self.vue = view
-        pass
+        self.vue.grille.signal.connect(self.get_update_click)
+
+    def get_update_click(self, x, y):
+        print(x,y)
+
+
+
 
     def start(self):
-        # Lance la partie
-        pass
+        self.vue.show()
+
 

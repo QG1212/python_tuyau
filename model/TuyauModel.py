@@ -2,8 +2,18 @@ from view.tuyau_key import Key
 
 class TuyauModel:
     def __init__(self):
-        #constructeur ?
+        self.image_folder = "images"
+        self.images = [
+            [("tuyau_coude.png",0), ("tuyau_droit.png",0), ("tuyau_droit.png",0), ("tuyau_coude.png",0)],
+            [("tuyau_droit.png",0), ("tuyau_coude.png",0), ("tuyau_coude.png",0), ("tuyau_droit.png",0)],
+            [("tuyau_droit.png",0), ("tuyau_droit.png",0), ("tuyau_droit.png",0), ("tuyau_droit.png",0)],
+            [("tuyau_coude.png",0), ("tuyau_coude.png",0), ("tuyau_coude.png",0), ("tuyau_coude.png",0)]
+        ]
+
+#Permet au jouer de tourner une tuile
+    def play(self, x, y):
         pass
+
 
     def name_player(self):
         # ajouter un layout
@@ -21,22 +31,7 @@ class TuyauModel:
         #clear a la fin
         pass
 
-    def level1(self):
-        image_folder = "images"
-        images = [
-            "tuyau_coude.png", "tuyau_droit.png", "tuyau_droit.png", "tuyau_coude.png",
-            "tuyau_droit.png", "tuyau_coude.png", "tuyau_coude.png", "tuyau_droit.png",
-            "tuyau_droit.png", "tuyau_droit.png", "tuyau_droit.png", "tuyau_droit.png",
-            "tuyau_coude.png", "tuyau_coude.png", "tuyau_coude.png", "tuyau_coude.png"
-        ]
-        pass
 
-# Permet au jouer de tourner une tuile
-    def play(self):
-        keys = Key(self.level1())
-        keys.buttonClicked()
-        keys.update_icon()
-        pass
 
 # Mélanger
     def shuffleBoard(self):

@@ -1,19 +1,24 @@
-from PySide6.QtWidgets import QWidget
+from PySide6.QtWidgets import QMainWindow
 from view.tuyau_grille import Grille
 
-
-class TuyauView(QWidget):
+# la vue hérite de la fenêtre
+#pas la fenêtre de ma chambre
+class TuyauView(QMainWindow):
     def __init__(self):
-        super(TuyauView, self).__init__()
-        self.gridV = Grille()
-        self.gridV.show()
+        QMainWindow.__init__(self)
+        # super(QMainWindow, self).__init__()
+        self.setWindowTitle("Jeu de tuyau")
+        self.setFixedSize(800, 600)
+
+        # Widget principal de la fenêtre
+        self.grille = Grille()
+        self.setCentralWidget(self.grille)
+
+        # self.gridV = Grille()
+        # self.gridV.show()
+
 
 # Affichage de la grille
     def print_board(self):
-
-        self.gridV.show()
-
-# Envoie des messages à l'utilisateur
-    def message(self):
         pass
 

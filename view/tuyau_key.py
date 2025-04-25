@@ -4,14 +4,14 @@ from PySide6.QtCore import QSize
 
 
 class Key(QPushButton):
-    def __init__(self, image_path):
+    def __init__(self, image_path, angle):
         super().__init__()
 
         self.setFixedSize(100, 100)
         self.setIcon(QIcon(image_path))
         self.setIconSize(self.size())
 
-        self.angle = 0
+        self.angle = angle
         self.image_path = image_path
         self.update_icon()
 
