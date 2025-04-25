@@ -1,8 +1,7 @@
-from PySide6.QtWidgets import QWidget, QGridLayout, QHBoxLayout, QVBoxLayout
+from PySide6.QtWidgets import QWidget, QGridLayout
 from PySide6.QtCore import Signal
 from view.tuyau_key import Key
-import os
-import random
+
 
 
 class Grille(QWidget):
