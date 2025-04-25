@@ -1,6 +1,7 @@
 from view.tuyau_key import Key
+from PySide6.QtWidgets import QWidget
 
-class TuyauModel:
+class TuyauModel(QWidget):
     def __init__(self):
         self.image_folder = "images"
         self.images = [
@@ -12,12 +13,6 @@ class TuyauModel:
 
 #Permet au jouer de tourner une tuile
     def play(self, x, y):
-        pass
-
-
-    def name_player(self):
-        # ajouter un layout
-        #mettre un nom
         pass
 
     def time(self):

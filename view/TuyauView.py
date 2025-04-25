@@ -1,5 +1,6 @@
 from PySide6.QtWidgets import QMainWindow
-from view.tuyau_grille import Grille
+from view.Tuyau_Jeu import  Grille
+from view.Tuyau_Jeu import Jeu
 
 # la vue hérite de la fenêtre
 #pas la fenêtre de ma chambre
@@ -11,8 +12,8 @@ class TuyauView(QMainWindow):
         self.setFixedSize(800, 600)
 
         # Widget principal de la fenêtre
-        self.grille = Grille()
-        self.setCentralWidget(self.grille)
+        self.jeu = Jeu()
+        self.setCentralWidget(self.jeu)
 
         # self.gridV = Grille()
         # self.gridV.show()

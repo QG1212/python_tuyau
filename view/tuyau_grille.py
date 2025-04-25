@@ -12,9 +12,6 @@ class Grille(QWidget):
         layout = QGridLayout()
         self.setLayout(layout)
 
-
-
-
 # a comprendre !!!!!!!!!!!!!!!!!!!
 
         image_folder = "images"
