@@ -20,11 +20,6 @@ class Key(QPushButton):
 
 # model
 
-    def buttonClicked(self):
-        # Incrémenter l'angle de 90° à chaque clic
-        self.angle = (self.angle + 90) % 360
-        self.update_icon()# Mettre à jour l'icône après rotation
-
 # a comprendre !!!!!!!!!!!!!!!!!!!!!!
 
     def update_icon(self):
@@ -38,3 +33,9 @@ class Key(QPushButton):
         # Définir le QPixmap comme icône du bouton
         self.setIcon(QIcon(image_path))
         self.setIconSize(self.size())
+
+    def buttonClicked(self):
+        # Incrémenter l'angle de 90° à chaque clic
+        self.angle = (self.angle + 90) % 360
+        self.update_icon()  # Mettre à jour l'icône après rotation
+
