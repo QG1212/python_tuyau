@@ -10,7 +10,7 @@ class Option(QWidget):
          self.temps = QLabel("Temps: 0")
 
          for label in (self.nom, self.coups, self.temps):
-             label.setStyleSheet("font-size: 20px; margin: 10px;")
+             label.setStyleSheet("font-size: 20px; margin: 20px;")
 
          layout.addWidget(self.nom)
          layout.addWidget(self.coups)
