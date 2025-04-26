@@ -9,7 +9,7 @@ class TuyauView(QMainWindow):
         QMainWindow.__init__(self)
         # super(QMainWindow, self).__init__()
         self.setWindowTitle("Jeu de tuyau")
-        self.setMinimumSize(800, 600)
+        self.setFixedSize(800, 600)
 
         # Widget principal de la fenêtre
         layout = QVBoxLayout()
