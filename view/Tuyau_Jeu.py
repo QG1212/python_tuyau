@@ -8,13 +8,12 @@ class Jeu(QWidget):
     def __init__(self):
         QWidget.__init__(self)
         layout = QHBoxLayout()
-        layout_horizontale = QHBoxLayout()
 
 
         self.grille = Grille()
-        layout.addWidget(self.grille)
         self.option = Option()
-        layout.addWidget(self.grille)
-        layout_horizontale.addWidget(self.option)
 
-        self.setMinimumSize(400, 600)
+        layout.addWidget(self.grille)
+        layout.addWidget(self.grille)
+
+        self.setLayout(layout)

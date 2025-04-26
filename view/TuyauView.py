@@ -15,8 +15,8 @@ class TuyauView(QMainWindow):
         self.jeu = Jeu()
         self.setCentralWidget(self.jeu)
 
-        # self.gridV = Grille()
-        # self.gridV.show()
+        #self.gridV = Grille()
+        #self.gridV.show()
 
 
 # Affichage de la grille
