@@ -9,55 +9,25 @@ class Grille(QWidget):
 
     def __init__(self):
         QWidget.__init__(self)
-        layout = QGridLayout()
-        self.setLayout(layout)
+        self.layout = QGridLayout()
+        self.setLayout(self.layout)
 
-# a comprendre !!!!!!!!!!!!!!!!!!!
-
-        image_folder = "images"
-        images = [
-            ["tuyau_coude.png", "tuyau_droit.png", "tuyau_droit.png", "tuyau_coude.png"],
-            ["tuyau_droit.png", "tuyau_coude.png", "tuyau_coude.png", "tuyau_droit.png"],
-            ["tuyau_droit.png", "tuyau_droit.png", "tuyau_droit.png", "tuyau_droit.png"],
-            ["tuyau_coude.png", "tuyau_coude.png", "tuyau_coude.png", "tuyau_coude.png"]
-        ]
+    def display(self, images):
+        # Vérifie si le layout est vide
+        # Prend le premier widget, s'il est pas vide -> supprime
+        # layout -> un tableau de widget, on prend le 1er puis on le supprime
+        while self.layout.count():
+            item = self.layout.takeAt(0)
+            if item.widget():
+                item.widget().deleteLater()
 
         for i in range(4):
             for j in range(4):
                 print(images[i][j])
-                bouton = Key(image_folder+"/"+images[i][j], 0)
-                layout.addWidget(bouton, i, j)
-                bouton.clicked.connect(lambda checked, x=i, y=j: self.signal.emit(x, y))
-
-
-
-#         # Créer la grille avec des images aléatoires
-#         for i in range(16):  # 4 cases par ligne
-#             # Choisir une image aléatoire parmi celles définies dans images
-#             image_path = os.path.join(image_folder, images[i])
-#
-#         # Layouts horizontaux pour chaque ligne
-#         lh1 = QHBoxLayout()
-#         lh2 = QHBoxLayout()
-#         lh3 = QHBoxLayout()
-#         lh4 = QHBoxLayout()
-#
-#         for i in range(16):
-#             image_path = os.path.join(image_folder, images[i])
-#             case = Key(image_path)
-#             if i < 4:
-#                 lh1.addWidget(case)
-#             elif i < 8:
-#                 lh2.addWidget(case)
-#             elif i < 12:
-#                 lh3.addWidget(case)
-#             else:
-#                 lh4.addWidget(case)
-#
-# # Grille
-#         lg.addLayout(lh1, 0, 0)
-#         lg.addLayout(lh2, 1, 0)
-#         lg.addLayout(lh3, 2, 0)
-#         lg.addLayout(lh4, 3, 0)
-#
-#         self.setLayout(lg)
+                # Dissocie le tuple
+                path,angle = images[i][j]
+                # path -> image
+                bouton = Key("images/"+path, angle)
+                self.layout.addWidget(bouton, i, j)
+                # Permet de mettre des parmètres à une fonction en parmètres
+                bouton.clicked.connect(lambda checked, y=i, x=j: self.signal.emit(x, y))

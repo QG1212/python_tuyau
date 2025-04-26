@@ -11,15 +11,19 @@ from view.TuyauView import TuyauView
 class TuyauControleur():
 
     def __init__(self, model, view):
-        self._model = model
+        # instance
+        self.model = model
         self.vue = view
-        #self.vue.grille.signal.connect(self.get_update_click)
+        # Ce connecte au signal de la grille
+        self.vue.jeu.grille.signal.connect(self.get_update_click)
+        # fait le lien entre le modele (image) et la grille qui créer l'ensemble des boutons
+        self.vue.jeu.grille.display(self.model.images)
+
 
     def get_update_click(self, x, y):
+        self.model.play(x, y)
+        self.vue.jeu.grille.display(self.model.images)
         print(x,y)
-
-
-
 
     def start(self):
         self.vue.show()

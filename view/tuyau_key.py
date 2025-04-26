@@ -8,7 +8,6 @@ class Key(QPushButton):
         super().__init__()
 
         self.setFixedSize(100, 100)
-        self.setIcon(QIcon(image_path))
         self.setIconSize(self.size())
 
         self.angle = angle
@@ -16,7 +15,7 @@ class Key(QPushButton):
         self.update_icon()
 
         # prevenir le controlleur de l'action + coor
-        self.clicked.connect(self.buttonClicked)
+        # self.clicked.connect(self.buttonClicked)
 
 # model
 
@@ -34,8 +33,9 @@ class Key(QPushButton):
         self.setIcon(QIcon(image_path))
         self.setIconSize(self.size())
 
-    def buttonClicked(self):
-        # Incrémenter l'angle de 90° à chaque clic
-        self.angle = (self.angle + 90) % 360
-        self.update_icon()  # Mettre à jour l'icône après rotation
+    def buttonClicked(self, angle):
 
+        self.angle = (angle) % 360
+
+        # Mettre à jour l'icône après rotation
+        self.update_icon()

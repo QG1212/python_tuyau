@@ -1,9 +1,7 @@
 from PySide6.QtWidgets import QMainWindow, QVBoxLayout
-from view.Tuyau_Jeu import  Grille
 from view.Tuyau_Jeu import Jeu
 
 # la vue hérite de la fenêtre
-#pas la fenêtre de ma chambre
 class TuyauView(QMainWindow):
     def __init__(self):
         QMainWindow.__init__(self)
@@ -17,13 +15,4 @@ class TuyauView(QMainWindow):
         self.setCentralWidget(self.jeu)
 
         self.setLayout(layout)
-
-
-        #self.gridV = Grille()
-        #self.gridV.show()
-
-
-# Affichage de la grille
-    def print_board(self):
-        pass
 

@@ -11,9 +11,12 @@ class TuyauModel(QWidget):
             [("tuyau_coude.png",0), ("tuyau_coude.png",0), ("tuyau_coude.png",0), ("tuyau_coude.png",0)]
         ]
 
-#Permet au jouer de tourner une tuile
+# Gere la rotation des tuiles
     def play(self, x, y):
-        pass
+        #recupere d'abord en y (quel tableau), puis en x (contenu du tableau)
+        path, angle = self.images[y][x]
+        angle = angle + 90
+        self.images[y][x] = (path, angle)
 
     def time(self):
         #chrono
@@ -26,8 +29,6 @@ class TuyauModel(QWidget):
         #clear a la fin
         pass
 
-
-
 # Mélanger
     def shuffleBoard(self):
         #Melange la grille quand cliquer
@@ -38,5 +39,5 @@ class TuyauModel(QWidget):
 
     # Verifie si la grille est valider
     def winner(self):
-        # quentino
+        # quentino_vibes
         pass
