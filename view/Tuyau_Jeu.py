@@ -7,13 +7,13 @@ from view.Tuyau_Nom import Nom
 class Jeu(QWidget):
     def __init__(self):
         QWidget.__init__(self)
-        layout = QHBoxLayout()
 
+        layout = QHBoxLayout()
 
         self.grille = Grille()
         self.option = Option()
 
         layout.addWidget(self.grille)
-        layout.addWidget(self.grille)
+        layout.addWidget(self.option)
 
         self.setLayout(layout)

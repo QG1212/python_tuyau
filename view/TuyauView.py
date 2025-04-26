@@ -1,4 +1,4 @@
-from PySide6.QtWidgets import QMainWindow
+from PySide6.QtWidgets import QMainWindow, QVBoxLayout
 from view.Tuyau_Jeu import  Grille
 from view.Tuyau_Jeu import Jeu
 
@@ -9,11 +9,15 @@ class TuyauView(QMainWindow):
         QMainWindow.__init__(self)
         # super(QMainWindow, self).__init__()
         self.setWindowTitle("Jeu de tuyau")
-        self.setFixedSize(800, 600)
+        self.setMinimumSize(800, 600)
 
         # Widget principal de la fenêtre
+        layout = QVBoxLayout()
         self.jeu = Jeu()
         self.setCentralWidget(self.jeu)
+
+        self.setLayout(layout)
+
 
         #self.gridV = Grille()
         #self.gridV.show()
