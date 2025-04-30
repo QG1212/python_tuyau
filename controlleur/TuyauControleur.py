@@ -24,6 +24,7 @@ class TuyauControleur():
         self.model.play(x, y)
         self.vue.jeu.grille.display(self.model.images)
         print(x,y)
+        print(self.model.winner())
 
     def start(self):
         self.vue.show()

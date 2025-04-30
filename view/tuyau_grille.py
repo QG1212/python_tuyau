@@ -7,7 +7,7 @@ from view.tuyau_key import Key
 class Grille(QWidget):
     signal = Signal(int, int)
 
-    def __init__(self, options):
+    def __init__(self, options = ""):
         QWidget.__init__(self)
         self.layout = QGridLayout()
         self.setLayout(self.layout)
