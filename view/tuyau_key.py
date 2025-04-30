@@ -4,18 +4,19 @@ from PySide6.QtCore import QSize
 
 
 class Key(QPushButton):
-    def __init__(self, image_path, angle):
+    def __init__(self, image_path, angle, options):
         super().__init__()
 
         self.setFixedSize(100, 100)
         self.setIconSize(self.size())
 
+        self.options = options
         self.angle = angle
         self.image_path = image_path
         self.update_icon()
 
         # prevenir le controlleur de l'action + coor
-        # self.clicked.connect(self.buttonClicked)
+        self.clicked.connect(self.buttonClicked)
 
 # model
 
@@ -39,3 +40,4 @@ class Key(QPushButton):
 
         # Mettre à jour l'icône après rotation
         self.update_icon()
+        self.options.increment_coups()

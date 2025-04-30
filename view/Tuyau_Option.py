@@ -5,9 +5,12 @@ class Option(QWidget):
      def __init__(self):
          QWidget.__init__(self)
          layout = QVBoxLayout()
+
+         self.nb_coups = 0
          self.nom = QLabel("Nom: Joueur")
-         self.coups = QLabel("Coups: 0")
+         self.coups = QLabel(f"Coups: {self.nb_coups}")
          self.temps = QLabel("Temps: 0")
+
 
          for label in (self.nom, self.coups, self.temps):
              label.setStyleSheet("font-size: 20px; margin: 20px;")
@@ -28,5 +31,10 @@ class Option(QWidget):
                          padding: 15px;
                      }
                  """)
+
+     def increment_coups(self):
+         self.coups_count += 1
+         self.coups.setText(f"Coups : {self.coups_count}")
+
 
 

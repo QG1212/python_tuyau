@@ -7,10 +7,11 @@ from view.tuyau_key import Key
 class Grille(QWidget):
     signal = Signal(int, int)
 
-    def __init__(self):
+    def __init__(self, options):
         QWidget.__init__(self)
         self.layout = QGridLayout()
         self.setLayout(self.layout)
+        self.options = options
 
     def display(self, images):
         # Vérifie si le layout est vide
