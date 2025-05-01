@@ -10,11 +10,10 @@ class Option(QWidget):
          self.layout = QVBoxLayout()
          self.setLayout(self.layout)
 
-         self.nb_coups = 0
          # model = TuyauModel()
          # model.coutdown()
-         self.coups = QLabel(f"Coups : {self.nb_coups}")
-         self.temps = QLabel("Temps : ")
+         self.coups = QLabel(f"Coups : 0")
+         self.temps = QLabel("Temps : 0")
 
 
          for label in (self.temps, self.coups) :
