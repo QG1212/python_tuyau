@@ -28,8 +28,8 @@ class Option(QWidget):
 
          self.setLayout(self.layout)
 
-     def set_coups(self, value):
-         self.coups.setText(f"Coups : {value}")
+     def set_coups(self, nb_coups):
+         self.coups.setText(f"Coups : {nb_coups}")
 
 
 
