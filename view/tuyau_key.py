@@ -38,4 +38,4 @@ class Key(QPushButton):
         self.angle = (angle)
         # Mettre à jour l'icône après rotation
         self.update_icon()
-        self.options.increment_coups()
+

@@ -4,6 +4,7 @@ import time
 
 class TuyauModel(QWidget):
     def __init__(self):
+        self.nb_coups = 0
         self.image_folder = "images"
         self.images = [
             [("tuyau_coude.png",0), ("tuyau_droit.png",0), ("tuyau_droit.png",0), ("tuyau_coude.png",0)],
@@ -49,6 +50,9 @@ class TuyauModel(QWidget):
         #l'associer au melange
         #l'associer a la fonction qui affiche le model
         pass
+
+    def increment_coups(self):
+        self.nb_coups += 1
 
     # Verifie si la grille est valider
     def winner(self):

@@ -23,8 +23,10 @@ class TuyauControleur():
 
     def get_update_click(self, x, y):
         self.model.play(x, y)
+        self.model.increment_coups()
         self.vue.jeu.grille.display(self.model.images)
-        self.vue.jeu.option.increment_coups()
+        self.vue.jeu.option.set_coups(self.model.nb_coups)
+
         print(x,y)
         print(self.model.winner())
 
