@@ -6,10 +6,10 @@ class TuyauModel(QWidget):
     def __init__(self):
         self.image_folder = "images"
         self.images = [
-            [("tuyau_coude.png",0), ("tuyau_droit.png",0), ("tuyau_droit.png",0), ("tuyau_coude.png",0)],
-            [("tuyau_droit.png",0), ("tuyau_coude.png",0), ("tuyau_coude.png",0), ("tuyau_droit.png",0)],
+            [("tuyau_coude2.png",0), ("tuyau_droit.png",0), ("tuyau_droit.png",0), ("tuyau_coude2.png",0)],
+            [("tuyau_droit.png",0), ("tuyau_coude2.png",0), ("tuyau_coude2.png",0), ("tuyau_droit.png",0)],
             [("tuyau_droit.png",0), ("tuyau_droit.png",0), ("tuyau_droit.png",0), ("tuyau_droit.png",0)],
-            [("tuyau_coude.png",0), ("tuyau_coude.png",0), ("tuyau_coude.png",0), ("tuyau_coude.png",0)]
+            [("tuyau_coude2.png",0), ("tuyau_coude2.png",0), ("tuyau_coude2.png",0), ("tuyau_coude2.png",0)]
         ]
 
         self.Rectangle = {

@@ -7,7 +7,7 @@ class Key(QPushButton):
     def __init__(self, image_path, angle, options=""):
         super().__init__()
 
-        self.setFixedSize(100, 100)
+        self.setFixedSize(100,150)
         self.setIconSize(self.size())
 
         self.options = options
