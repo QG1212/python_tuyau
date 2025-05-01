@@ -20,8 +20,9 @@ class TuyauControleur():
         self.vue.jeu.grille.display(self.model.images)
         #self.model.coutdown()
 
-
+    # Modification à chaque click
     def get_update_click(self, x, y):
+        # Coordonné
         self.model.play(x, y)
         self.model.increment_coups()
         self.vue.jeu.grille.display(self.model.images)
@@ -34,7 +35,6 @@ class TuyauControleur():
             print("Vous avez fini le jeu en "+ str(self.model.coutdown().seconds) + " secondes avec " + str(self.model.nb_coups) + " coups.")
 
     def start(self):
-        #self.model.coutdown()
         self.vue.show()
 
 

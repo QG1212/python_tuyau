@@ -14,6 +14,7 @@ class TuyauModel(QWidget):
             [("tuyau_coude.png",0), ("tuyau_coude.png",0), ("tuyau_coude.png",0), ("tuyau_coude.png",0)]
         ]
 
+        # L'ensemble des sorties/entrées pour chaque rotation pour un tuyau rectangle
         self.Rectangle = {
             0:[(-1,0), (1,0)],
             90:[(0, -1), (0, 1)],
@@ -21,6 +22,7 @@ class TuyauModel(QWidget):
             270:[(0, -1), (0, 1)],
         }
 
+        # L'ensemble des sorties/entrées pour chaque rotation pour un tuyau coude
         self.Coude = {
             0:[(0,1), (-1,0)],
             90:[(-1,0), (0,-1)],
@@ -28,6 +30,7 @@ class TuyauModel(QWidget):
             270:[(1,0), (0,1)],
         }
 
+        # la date quand le jeu est lancé
         self.startChrono = datetime.datetime.now()
 
 # Gere la rotation des tuiles
@@ -44,7 +47,7 @@ class TuyauModel(QWidget):
     def increment_coups(self):
         self.nb_coups += 1
 
-    # Verifie si la grille est valider
+    # Vérifie si la grille est valider
     def winner(self):
         for i in range(4):
             for j in range(4):
