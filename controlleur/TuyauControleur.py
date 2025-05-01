@@ -18,6 +18,7 @@ class TuyauControleur():
         self.vue.jeu.grille.signal.connect(self.get_update_click)
         # fait le lien entre le modele (image) et la grille qui créer l'ensemble des boutons
         self.vue.jeu.grille.display(self.model.images)
+        #self.model.coutdown()
 
 
     def get_update_click(self, x, y):
@@ -27,6 +28,7 @@ class TuyauControleur():
         print(self.model.winner())
 
     def start(self):
+        #self.model.coutdown()
         self.vue.show()
 
 

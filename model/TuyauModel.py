@@ -1,5 +1,6 @@
 from view.tuyau_key import Key
 from PySide6.QtWidgets import QWidget
+import time
 
 class TuyauModel(QWidget):
     def __init__(self):
@@ -31,6 +32,15 @@ class TuyauModel(QWidget):
         path, angle = self.images[y][x]
         angle = (angle + 90) % 360
         self.images[y][x] = (path, angle)
+
+    def coutdown(self):
+        seconds = 0
+        while seconds >= 0:
+            print(seconds)
+            # arret du programme pendant 1 sec
+            time.sleep(1)
+            seconds = seconds + 1
+        print(seconds)
 
 # Mélanger
     def shuffleBoard(self):
