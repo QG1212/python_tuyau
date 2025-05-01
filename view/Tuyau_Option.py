@@ -10,11 +10,9 @@ class Option(QWidget):
          self.layout = QVBoxLayout()
          self.setLayout(self.layout)
 
-         # model = TuyauModel()
-         # model.coutdown()
-         self.coups = QLabel(f"Coups : 0")
-         self.temps = QLabel("Temps : 0")
 
+         self.coups = QLabel(f"Coups : 0")
+         self.temps = QLabel("Temps : ")
 
          for label in (self.temps, self.coups) :
              label.setStyleSheet("font-size: 20px; margin: 20px;border: 2px solid black; border-radius: 10px; background-color: #f0f0f0; padding: 15px;")

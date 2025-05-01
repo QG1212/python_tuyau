@@ -1,6 +1,7 @@
 from view.tuyau_key import Key
 from PySide6.QtWidgets import QWidget
-import time
+import datetime
+
 
 class TuyauModel(QWidget):
     def __init__(self):
@@ -27,6 +28,8 @@ class TuyauModel(QWidget):
             270:[(1,0), (0,1)],
         }
 
+        self.startChrono = datetime.datetime.now()
+
 # Gere la rotation des tuiles
     def play(self, x, y):
         #recupere d'abord en y (quel tableau), puis en x (contenu du tableau)
@@ -35,21 +38,8 @@ class TuyauModel(QWidget):
         self.images[y][x] = (path, angle)
 
     def coutdown(self):
-        seconds = 0
-        while seconds >= 0:
-            print(seconds)
-            # arret du programme pendant 1 sec
-            time.sleep(1)
-            seconds = seconds + 1
-        print(seconds)
-
-# Mélanger
-    def shuffleBoard(self):
-        #Melange la grille quand cliquer
-        #faire un layout bourton
-        #l'associer au melange
-        #l'associer a la fonction qui affiche le model
-        pass
+        timer = datetime.datetime.now() - self.startChrono
+        return timer
 
     def increment_coups(self):
         self.nb_coups += 1
@@ -67,7 +57,9 @@ class TuyauModel(QWidget):
 
                 for voisin in tuyau:
                     #j2 = x / i2 = y
+                    #Pour aller au voisin
                     j2,i2 = voisin
+                    #Le voisin
                     xVoisin = j2 + j
                     yVoisin = i2 + i
 
@@ -79,6 +71,7 @@ class TuyauModel(QWidget):
                         else:
                             tuyau_voisin = self.Coude[angle_voisin]
 
+                        # Coordonnées des voisins de B
                         new_voisin = []
                         for next_voisin in tuyau_voisin:
                             # j2 = x / i2 = y
@@ -88,7 +81,7 @@ class TuyauModel(QWidget):
                             # coordonné précise de voisin
                             new_voisin.append((xNextV, yNextV))
 
-                        print((j,i), new_voisin)
+                        # vérifie que les coordonnées de A sois dans les voisins de B
                         if (j,i) not in new_voisin:
                             return False
 

@@ -26,9 +26,12 @@ class TuyauControleur():
         self.model.increment_coups()
         self.vue.jeu.grille.display(self.model.images)
         self.vue.jeu.option.set_coups(self.model.nb_coups)
+        self.vue.jeu.option.temps.setText("Temps : " + str(self.model.coutdown().seconds))
 
         print(x,y)
         print(self.model.winner())
+        if self.model.winner():
+            print("Vous avez fini le jeu en "+ str(self.model.coutdown().seconds) + " secondes avec " + str(self.model.nb_coups) + " coups.")
 
     def start(self):
         #self.model.coutdown()
