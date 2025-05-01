@@ -32,17 +32,6 @@ class TuyauModel(QWidget):
         angle = (angle + 90) % 360
         self.images[y][x] = (path, angle)
 
-    def time(self):
-        #chrono
-        pass
-
-    def coup(self):
-        #coup stocker dans un tableau
-        #compter le tableau
-        #afficher
-        #clear a la fin
-        pass
-
 # Mélanger
     def shuffleBoard(self):
         #Melange la grille quand cliquer
