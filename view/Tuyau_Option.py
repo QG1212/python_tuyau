@@ -28,9 +28,9 @@ class Option(QWidget):
 
          self.setLayout(self.layout)
 
-     # def increment_coups(self):
-     #     self.coups_count += 1
-     #     self.coups.setText(f"Coups : {self.coups_count}")
+     def increment_coups(self):
+         self.nb_coups += 1
+         self.coups.setText(f"Coups : {self.nb_coups}")
 
 
 
