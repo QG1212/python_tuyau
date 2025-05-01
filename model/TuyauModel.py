@@ -6,10 +6,10 @@ class TuyauModel(QWidget):
     def __init__(self):
         self.image_folder = "images"
         self.images = [
-            [("tuyau_coude2.png",0), ("tuyau_droit.png",0), ("tuyau_droit.png",0), ("tuyau_coude2.png",0)],
-            [("tuyau_droit.png",0), ("tuyau_coude2.png",0), ("tuyau_coude2.png",0), ("tuyau_droit.png",0)],
+            [("tuyau_coude.png",0), ("tuyau_droit.png",0), ("tuyau_droit.png",0), ("tuyau_coude.png",0)],
+            [("tuyau_droit.png",0), ("tuyau_coude.png",0), ("tuyau_coude.png",0), ("tuyau_droit.png",0)],
             [("tuyau_droit.png",0), ("tuyau_droit.png",0), ("tuyau_droit.png",0), ("tuyau_droit.png",0)],
-            [("tuyau_coude2.png",0), ("tuyau_coude2.png",0), ("tuyau_coude2.png",0), ("tuyau_coude2.png",0)]
+            [("tuyau_coude.png",0), ("tuyau_coude.png",0), ("tuyau_coude.png",0), ("tuyau_coude.png",0)]
         ]
 
         self.Rectangle = {
@@ -58,7 +58,7 @@ class TuyauModel(QWidget):
                 if nom == "tuyau_droit.png":
                     # tuyau contient un tableau du dico, qui correspond aux voisins
                     tuyau = self.Rectangle[angle]
-                else:
+                elif nom == "tuyau_coude.png":
                     tuyau = self.Coude[angle]
 
                 for voisin in tuyau:
