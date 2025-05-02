@@ -1,7 +1,5 @@
 from PySide6.QtGui import QIcon, QTransform, QPixmap
 from PySide6.QtWidgets import QPushButton
-from PySide6.QtCore import QSize
-
 
 class Key(QPushButton):
     def __init__(self, image_path, angle, options=""):
@@ -18,9 +16,6 @@ class Key(QPushButton):
         # prevenir le controlleur de l'action + coor
         self.clicked.connect(self.buttonClicked)
 
-# model
-
-# a comprendre !!!!!!!!!!!!!!!!!!!!!!
 
     def update_icon(self):
         # Appliquer la rotation en fonction de l'angle

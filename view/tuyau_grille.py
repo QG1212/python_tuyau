@@ -5,6 +5,7 @@ from view.tuyau_key import Key
 
 
 class Grille(QWidget):
+    # Instance du signal, pour prévenir le controleur d'une rotation
     signal = Signal(int, int)
 
     def __init__(self, options = ""):
@@ -13,11 +14,12 @@ class Grille(QWidget):
         self.setLayout(self.layout)
         self.options = options
 
+# On supprime l'ensemble des boutons de la grille pour la recréer avec la nouvelles rotations
     def display(self, images):
         # Vérifie si le layout est vide
-        # Prend le premier widget, s'il est pas vide -> supprime
         # layout -> un tableau de widget, on prend le 1er puis on le supprime
         while self.layout.count():
+            # Prend le premier widget, s'il est pas vide -> supprime
             item = self.layout.takeAt(0)
             if item.widget():
                 item.widget().deleteLater()

@@ -14,7 +14,7 @@ class TuyauModel(QWidget):
             [("tuyau_coude.png",0), ("tuyau_coude.png",0), ("tuyau_coude.png",0), ("tuyau_coude.png",0)]
         ]
 
-        # L'ensemble des sorties/entrées pour chaque rotation pour un tuyau rectangle
+        # Dicto de tableau contenant des sorties/entrées pour chaque rotation pour un tuyau rectangle
         self.Rectangle = {
             0:[(-1,0), (1,0)],
             90:[(0, -1), (0, 1)],
@@ -22,7 +22,7 @@ class TuyauModel(QWidget):
             270:[(0, -1), (0, 1)],
         }
 
-        # L'ensemble des sorties/entrées pour chaque rotation pour un tuyau coude
+        # Dicto de tableau contenant des sorties/entrées pour chaque rotation pour un tuyau coude
         self.Coude = {
             0:[(0,1), (-1,0)],
             90:[(-1,0), (0,-1)],
@@ -40,18 +40,24 @@ class TuyauModel(QWidget):
         angle = (angle + 90) % 360
         self.images[y][x] = (path, angle)
 
+# Chrono
     def coutdown(self):
+        # date du jour - date du lancement
         timer = datetime.datetime.now() - self.startChrono
         return timer
 
+# Ajoute des coups à l'attribut
     def increment_coups(self):
         self.nb_coups += 1
 
-    # Vérifie si la grille est valider
+# Vérifie si la grille est valider
     def winner(self):
+        # Parcours de la grille
         for i in range(4):
             for j in range(4):
+                # Tuples de l'image
                 nom, angle = self.images[i][j]
+                # Vérifie quelle images est sur la bouton
                 if nom == "tuyau_droit.png":
                     # tuyau contient un tableau du dico, qui correspond aux voisins
                     tuyau = self.Rectangle[angle]
@@ -66,7 +72,9 @@ class TuyauModel(QWidget):
                     xVoisin = j2 + j
                     yVoisin = i2 + i
 
+                    # Vérifie si nous sommes bien dans le tableau
                     if 0<=xVoisin<=3 and 0<=yVoisin<=3:
+                        # Tuple du voisin
                         nom_voisin, angle_voisin = self.images[yVoisin][xVoisin]
                         if nom_voisin == "tuyau_droit.png":
                             # tuyau contient un tableau du dico, qui correspond aux voisins
@@ -81,7 +89,7 @@ class TuyauModel(QWidget):
                             j2, i2 = next_voisin
                             xNextV = j2 + xVoisin
                             yNextV = i2 + yVoisin
-                            # coordonné précise de voisin
+                            # coordonné précise du voisin
                             new_voisin.append((xNextV, yNextV))
 
                         # vérifie que les coordonnées de A sois dans les voisins de B

@@ -9,10 +9,13 @@ class Jeu(QWidget):
 
         layout = QHBoxLayout()
 
+        # instance
         self.grille = Grille()
         self.option = Option()
 
+        # ajout des widgets
         layout.addWidget(self.grille)
         layout.addWidget(self.option)
 
+        #
         self.setLayout(layout)
